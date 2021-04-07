@@ -315,11 +315,17 @@ function ( declare, Query, QueryTask, Geoprocessor, FeatureSet, FeatureLayer ) {
 					})
 				})
 				// save and share button
+				$(`#${t.id}saveAndShare`).click(function(c){
+					$(`#map-utils-control a`).each(function(i,v){
+						if ($(v).html() == "Save &amp; Share"){
+							v.click();
+						}
+					});
+				})		
+				//download data button
 				$(`#${t.id}downloadData`).click(function(c){
 					t.clicks.downloadData(t);
-				})	
-				//download data button
-
+				})
 			},
 			cbChecker: function(t){
 				let n = 0;
