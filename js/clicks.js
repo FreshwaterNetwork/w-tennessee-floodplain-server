@@ -1,7 +1,7 @@
 define([
-	"dojo/_base/declare", "esri/tasks/query", "esri/tasks/QueryTask"
+	"dojo/_base/declare", "esri/tasks/query", "esri/tasks/QueryTask",  "esri/tasks/Geoprocessor", "esri/tasks/FeatureSet", "esri/layers/FeatureLayer"
 ],
-function ( declare, Query, QueryTask ) {
+function ( declare, Query, QueryTask, Geoprocessor, FeatureSet, FeatureLayer ) {
         "use strict";
 
         return declare(null, {
@@ -45,7 +45,7 @@ function ( declare, Query, QueryTask ) {
 											</label>
 										</div>
 										<div class="flex1a">
-											<span class="umr-slider-label label-off"><span class="rnum label-off">x</span> to <span class="rnum label-off">y</span> acres</span>
+											<span class="umr-slider-label label-off"><span class="rnum label-off">x</span> to <span class="rnum label-off">y</span> ${v1.unit}</span>
 											<div class="slider-container range-slider" style="width:170px;">
 												<div id="${t.id}-${v1.field}" class="slider"></div>
 											</div>
@@ -120,6 +120,10 @@ function ( declare, Query, QueryTask ) {
 									var max = t.sliderObj[t.fe][v1].max;
 									$("#" + v.id).slider( "option", "min", min );
 									$("#" + v.id).slider( "option", "max", max );
+									if (t.sliderObj[t.fe][v1].step){
+										var step = t.sliderObj[t.fe][v1].step;
+										$("#" + v.id).slider( "option", "step", step );
+									}
 									var options = $("#" + v.id).slider( 'option' );
 									var val1 = options.min;
 									var val2 = options.max;
@@ -311,13 +315,11 @@ function ( declare, Query, QueryTask ) {
 					})
 				})
 				// save and share button
-				$(`#${t.id}saveAndShare`).click(function(c){
-					$(`#map-utils-control a`).each(function(i,v){
-						if ($(v).html() == "Save &amp; Share"){
-							v.click();
-						}
-					});
+				$(`#${t.id}downloadData`).click(function(c){
+					t.clicks.downloadData(t);
 				})	
+				//download data button
+
 			},
 			cbChecker: function(t){
 				let n = 0;
@@ -332,11 +334,9 @@ function ( declare, Query, QueryTask ) {
 					}
 				})
 				if (n == 0){
-					$(`#${t.id}saveAndShare`).hide();
-					$(`#${t.id}resetFilters`).hide();
+					$(`.dlssre`).prop("disabled", true);
 				}else{
-					$(`#${t.id}saveAndShare`).show();
-					$(`#${t.id}resetFilters`).show();
+					$(`.dlssre`).prop("disabled", false);
 				}
 			},
 			sliderChange: function(e, ui, t){
@@ -419,7 +419,7 @@ function ( declare, Query, QueryTask ) {
 			},
 			layerDefs: function(t){
 				if (t.obj.stateSet == "no"){
-					t.obj.exp = [t.Acres, t.TN, t.TP, t.Sed, t.SedAcc, t.DINCY, t.impWet, t.NCCPI, t.fprank, t.adjProt, t.EcoSig, t.inIBA, t.ABCcorr, t.WT_TOT, t.anyHab, t.cumu_hci, t.HPFedEnd, t.popnow, t.pop2050, t.Dam2050]
+					t.obj.exp = [t.Acres, t.IL_TNp, t.IL_TPp, t.IL_TN_DELp, t.IL_TP_DELp, t.nccpi, t.drain,	t.NRCS,	t.nearProt,	t.nearIBA, t.inTNC,	t.cumu_hci,	t.resil, t.swap1, t.swap2, t.swap3, t.pop, t.damages, t.SOVI]
 				}
 				var exp = "OBJECTID > 0";
 				var cnt = 0;
@@ -452,6 +452,46 @@ function ( declare, Query, QueryTask ) {
 					var countWcomma = t.clicks.commaSeparateNumber(count)
 					$('#' + t.id + 'mng-act-wrap .fuCount').html(countWcomma); 
 				});	
+			},
+			downloadData: function(t){
+				$(`.dlssre`).prop("disabled",true)
+				$(document.body).css({ 'cursor': 'wait' })
+				var gp = new Geoprocessor("https://cirrus.tnc.org/arcgis/rest/services/FN_AGR/extractByAttributes/GPServer/extractByAttributes");
+				let layerName = ""
+				if (t.obj.hucLayer == "0"){
+					layerName = "huc8"
+				}
+				if (t.obj.hucLayer == "1"){
+					layerName = "huc12"
+				}
+				if (t.obj.hucLayer == "2"){
+					layerName = "catchments"
+				}
+				var params = { layerName: layerName, where: t.definitionExpression };
+				gp.submitJob(params, gpresults, erback);
+
+				function gpresults(jobInfo) {
+					gp.getResultData(jobInfo.jobId,"output", function(output){ 
+						let uri = output.value.url;
+						let url = uri.replace('scratch/','')
+						var link = document.createElement("a");
+					    let name = 'output';
+					    link.setAttribute('download', name);
+					    link.href = url;
+					    document.body.appendChild(link);
+					    link.click();
+					    link.remove();
+					    $(document.body).css({ 'cursor': 'default' })
+					    $(`#${t.id}downloadData`).prop("disabled",false)
+    				})
+				}
+				function erback(e){
+					console.log(e )
+					if (e.jobStatus == "esriJobSucceeded" || e.jobStatus == "esriJobFailed"){
+						$(document.body).css({ 'cursor': 'default' })
+						$(`.dlssre`).prop("disabled",false)
+					}
+				}
 			},
 			commaSeparateNumber: function(val){
 				while (/(\d+)(\d{3})/.test(val.toString())){
