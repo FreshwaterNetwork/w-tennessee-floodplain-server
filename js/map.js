@@ -12,7 +12,8 @@ require([
    "esri/PopupTemplate",
    "esri/tasks/QueryTask", 
    "esri/tasks/support/Query",
-   "esri/layers/GraphicsLayer"],
+   "esri/layers/GraphicsLayer",
+   "esri/core/watchUtils"],
 function(
    Map,
    MapView,
@@ -26,7 +27,8 @@ function(
    PopupTemplate, 
    QueryTask,
    Query,
-   GraphicsLayer) {
+   GraphicsLayer,
+   watchUtils) {
    
    // create map
    app.map = new Map({
@@ -45,8 +47,7 @@ function(
          dockEnabled: true,
          dockOptions: {
             buttonEnabled: false,
-            breakpoint: false,
-            position: "top-left"
+            breakpoint: false
          }
       }
    });
@@ -124,6 +125,13 @@ function(
    })
    lgExpand.expand();
 
+   // listen for poup close button
+   watchUtils.whenTrue(app.view.popup,'visible', function(){
+      watchUtils.whenFalseOnce(app.view.popup,'visible', function(){
+         app.resultsLayer.removeAll();
+      })
+   })
+   
    // call event listener for map clicks
    mapClick();
 

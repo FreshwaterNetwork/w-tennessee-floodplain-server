@@ -1,5 +1,7 @@
 
 function createURL(){
+	$(`.dlssre`).prop("disabled",true);
+
 	updateObject()
 	// convert app.obj to json
 	let myjson = JSON.stringify(app.obj);
@@ -15,7 +17,7 @@ function createURL(){
 	var linkRequest = {
 		destination: "https://maps.freshwaternetwork.org/dev/western-tennessee-floodplain/?search=" + uri
 	};
-	var shortUrl = "";
+	shortUrl = "";
 	$.ajax({
 		url: 'https://api.rebrandly.com/v1/links',
 		type: "post",
@@ -25,12 +27,50 @@ function createURL(){
 		success: function(result){
 			shortUrl = (result.shortUrl.indexOf('http') == -1) ? 'https://' + result.shortUrl : result.shortUrl;
             console.log(shortUrl)
+            openSaveAndSharePopup(shortUrl);
 		},
 		error: function(error) {
             shortUrl = linkRequest.destination;
             console.log(shortUrl)
+            openSaveAndSharePopup(shortUrl);
 		}
 	});
+}
+function openSaveAndSharePopup(shortUrl){
+	app.view.popup.close();
+	let div = document.createElement("div");
+	div.setAttribute("id", "saveAndSharePopup");
+	div.className = "saveAndSharePopup";
+	div.classList.add("esri-popup--shadow");
+	div.innerHTML = `
+		<div class="saveAndShareHeaderWrap">
+			<h2 class="saveAndShareHeader">Save and Share</h2>
+			<div class="esri-popup__header-buttons">
+				<div role="button" tabindex="0" class="esri-popup__button" aria-label="Close" title="Close">
+					<span onclick="closeSaveAndSharePopup()" aria-hidden="true" class="esri-popup__icon esri-icon-close">
+					</span>
+				</div>
+			</div>
+		</div>
+		<div style="margin: 0 10px;">
+			<div style="margin-left:4px;">Permalink <span id="copiedText">copied!</span></div>
+			<input type="text" id="saveAndShareLink" value="${shortUrl}">
+			<button id="saveAndShareButton" class="button button-default" onclick="copySaveAndShareLink()">Copy to Clipboard</button>
+		</div>
+	`
+	let mapDiv = document.getElementById("map-div");
+	mapDiv.appendChild(div);
+}
+function copySaveAndShareLink(){
+	var copyText = document.getElementById("saveAndShareLink");
+	copyText.select();
+	copyText.setSelectionRange(0, 99999)
+	document.execCommand("copy");
+	document.getElementById("copiedText").style.display = "inline-block";
+}
+function closeSaveAndSharePopup(){
+	document.getElementById("saveAndSharePopup").remove();
+	$(`.dlssre`).prop("disabled",false)
 }
 //this will vary for each app
 function updateObject(){
@@ -71,6 +111,13 @@ function updateObject(){
 			app.obj.rbCbIds.push(id)
 		}
 	}));	
+	// Get ids of checked supporting layers
+	app.obj.supLyrIds = [];
+	document.querySelectorAll("#sup-layers-wrap .sup_cb").forEach(((v) => {
+		if (v.checked == true){
+			app.obj.supLyrIds.push(v.id);
+		}
+	}))
 	// center and zoom level
 	app.obj.extent = app.view.extent;
 
@@ -96,6 +143,9 @@ function buildFromState(){
 		// // checkboxes for radio buttons
 		app.obj.rbCbIds.forEach((v) => {
 			$('#id' + v).trigger('click');	
+		})
+		app.obj.supLyrIds.forEach((v) => {
+			$('#' + v).tigger('click');
 		})
 		//extent
 		require(["esri/geometry/Extent", "esri/geometry/SpatialReference"], function(Extent,SpatialReference) { 

@@ -121,3 +121,44 @@
 .catch-text{
 	position:absolute; top:7px; right:14px; color:#457545; 
 }
+.saveAndShareHeaderWrap{
+	display:flex;
+}
+.saveAndSharePopup{
+	position: absolute;
+	background: #fff;
+	width: 370px;
+	height: 110px;
+	left: 50%;
+	margin-left: -185px;
+	top:50%;
+	margin-top:-55px;
+}
+.saveAndShareHeader{
+	border-radius: 2px;
+	font-size: 14px;
+	padding: 6px 7px;
+	margin: 6px auto 0px 7px;
+	display: block;
+	white-space: pre-wrap;
+	word-break: break-all;
+	word-wrap: break-word;
+	word-break: break-word;
+}
+#saveAndShareLink{
+	font-size: 14px;
+	padding: 7px;
+	border: 1px solid #ddd;
+    width: 210px;
+}
+#saveAndShareButton{
+	height: 31px; 
+	padding: 6px 8px;
+	margin: -5px 0 0 4px;
+}
+#copiedText{
+	color: red;
+	display: none;
+}
+
+

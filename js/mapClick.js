@@ -74,21 +74,27 @@ function mapClick(){
 		           let IL_TP_DEL = commaSeparateNumber(Math.round(a.IL_TP_DEL))
 		           let SOVI = a.SOVI.toFixed(3);
 
-		           app.view.popup.open({
-		              // Set the popup's title to the coordinates of the location
-		              title: a.name,
-		              content: `
-		                 Watershed area (acres): <b>${unit_ac}</b><br>
-		                 ${acresLabel}: <b>${acres}</b><br>
-		                 Nitrogen load at outflow (kg/yr): <b>${IL_TN}</b><br>
-		                 Phosphorus load at outflow (kg/yr): <b>${IL_TP}</b><br>
-		                 Nitrogen load to Gulf of Mexico (kg/yr): <b>${IL_TN_DEL}</b><br>
-		                 Phosphorus load to Gulf of Mexico (kg/yr): <b>${IL_TP_DEL}</b><br>
-		                 ${popLabel}: <b>${pop}</b><br>
-		                 ${damagesLabel}: <b>$${damages}</b><br>
-		                 Social vulnerability index: <b>${SOVI}</b>
-		              `  
-		           });
+		           	app.view.popup.set("dockOptions", {
+						breakpoint: false,
+						buttonEnabled: false,
+						position: "top-left"
+					});
+
+					app.view.popup.open({
+						// Set the popup's title to the coordinates of the location
+						title: a.name,
+						content: `
+							Watershed area (acres): <b>${unit_ac}</b><br>
+							${acresLabel}: <b>${acres}</b><br>
+							Nitrogen load at outflow (kg/yr): <b>${IL_TN}</b><br>
+							Phosphorus load at outflow (kg/yr): <b>${IL_TP}</b><br>
+							Nitrogen load to Gulf of Mexico (kg/yr): <b>${IL_TN_DEL}</b><br>
+							Phosphorus load to Gulf of Mexico (kg/yr): <b>${IL_TP_DEL}</b><br>
+							${popLabel}: <b>${pop}</b><br>
+							${damagesLabel}: <b>$${damages}</b><br>
+							Social vulnerability index: <b>${SOVI}</b>
+						`
+					});
 		        }
 		     })
 		})
