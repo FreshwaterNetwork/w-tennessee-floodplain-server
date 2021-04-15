@@ -15,6 +15,7 @@ function createURL(){
 	var linkRequest = {
 		destination: "https://maps.freshwaternetwork.org/dev/western-tennessee-floodplain/?search=" + uri
 	};
+	var shortUrl = "";
 	$.ajax({
 		url: 'https://api.rebrandly.com/v1/links',
 		type: "post",
@@ -22,11 +23,11 @@ function createURL(){
 		headers: requestHeaders,
 		dataType: "json",
 		success: function(result){
-			var shortUrl = (result.shortUrl.indexOf('http') == -1) ? 'https://' + result.shortUrl : result.shortUrl;
+			shortUrl = (result.shortUrl.indexOf('http') == -1) ? 'https://' + result.shortUrl : result.shortUrl;
             console.log(shortUrl)
 		},
 		error: function(error) {
-            var shortUrl = linkRequest.destination;
+            shortUrl = linkRequest.destination;
             console.log(shortUrl)
 		}
 	});
