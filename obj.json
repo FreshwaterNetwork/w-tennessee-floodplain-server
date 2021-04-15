@@ -1,5 +1,4 @@
 {
-	"visibleLayers": [],
 	"hucLayer": "0",
 	"mngmtAction": "",
 	"floodFreq": "1",
@@ -10,6 +9,6 @@
 	"slCbIds": [],
 	"rbIds": [],
 	"rbCbIds": [],
-	"extent": "",
-	"stateSet": "no",
+	"extent": {},
+	"stateSet": "no"
 }
