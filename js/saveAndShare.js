@@ -145,7 +145,7 @@ function buildFromState(){
 			$('#id' + v).trigger('click');	
 		})
 		app.obj.supLyrIds.forEach((v) => {
-			$('#' + v).tigger('click');
+			document.getElementById(v).click();
 		})
 		//extent
 		require(["esri/geometry/Extent", "esri/geometry/SpatialReference"], function(Extent,SpatialReference) { 

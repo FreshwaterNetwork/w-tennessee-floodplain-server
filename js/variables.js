@@ -84,25 +84,25 @@ app.filterObj = {
 				type:"slider",
 				field:"IL_TNp",
 				label:"Local nutrient loading (nitrogen)",
-				unit:"Kg/yr"
+				unit:""
 			},
 			con1:{
 				type:"slider",
 				field:"IL_TPp",
 				label:"Local nutrient loading (phosphorus)",
-				unit:"Kg/yr"
+				unit:""
 			},
 			con2:{
 				type:"slider",
 				field:"IL_TN_DELp",
 				label:"Nutrient loading to Gulf of Mexico (nitrogen)",
-				unit:"Kg/yr"
+				unit:""
 			},
 			con3:{
 				type:"slider",
 				field:"IL_TP_DELp",
 				label:"Nutrient loading to Gulf of Mexico (phosphorus)",
-				unit:"Kg/yr"
+				unit:""
 			}
 		}
 	},
@@ -363,7 +363,7 @@ app.sliderObj = {
 		},
 		SOVI:{
 			values:[],vis:true,min:0.381,max:2.259,shfld:true,step:0.001,
-			info:"<b>Index of social vulnerability to environmental hazards</b><br> Index characterizing social vulnerability to environmental hazards, drawing on 22 demographic variables. At the national scale, values below -1 are considered low social vulnerability, -1 to +1 are medium, and above +1 are high. Scores are standard deviations from an average vulnerability score of 0. Relative to the continental U.S., scores below -1 may be considered low social vulnerability, -1 to +1 medium, and above +1 high. <a href='https://artsandsciences.sc.edu/geog/hvri/faq' target='_blank'>More Info</a>" 
+			info:"<b>Index of social vulnerability to environmental hazards</b><br> Index characterizing social vulnerability to environmental hazards, drawing on 22 demographic variables. At the national scale, values below -1 are considered low social vulnerability, -1 to +1 are medium, and above +1 are high. Scores are standard deviations from an average vulnerability score of 0. Relative to the continental U.S., scores below -1 may be considered low social vulnerability, -1 to +1 medium, and above +1 high. <a href='https://link.springer.com/article/10.1007/s11069-020-04470-2' target='_blank'>More Info</a>" 
 		}
 	},
 	// huc 8 + 1 in 100 year flood
@@ -434,7 +434,7 @@ app.sliderObj = {
 		},
 		SOVI:{
 			values:[],vis:true,min:0.381,max:2.259,shfld:true,step:0.001,
-			info:"<b>Index of social vulnerability to environmental hazards</b><br> Index characterizing social vulnerability to environmental hazards, drawing on 22 demographic variables. At the national scale, values below -1 are considered low social vulnerability, -1 to +1 are medium, and above +1 are high. Scores are standard deviations from an average vulnerability score of 0. Relative to the continental U.S., scores below -1 may be considered low social vulnerability, -1 to +1 medium, and above +1 high. <a href='https://artsandsciences.sc.edu/geog/hvri/faq' target='_blank'>More Info</a>" 
+			info:"<b>Index of social vulnerability to environmental hazards</b><br> Index characterizing social vulnerability to environmental hazards, drawing on 22 demographic variables. At the national scale, values below -1 are considered low social vulnerability, -1 to +1 are medium, and above +1 are high. Scores are standard deviations from an average vulnerability score of 0. Relative to the continental U.S., scores below -1 may be considered low social vulnerability, -1 to +1 medium, and above +1 high. <a href='https://link.springer.com/article/10.1007/s11069-020-04470-2' target='_blank'>More Info</a>" 
 		}
 	},
 	// huc 8 + 1 in 500 year flood
@@ -505,7 +505,7 @@ app.sliderObj = {
 		},
 		SOVI:{
 			values:[],vis:true,min:0.381,max:2.259,shfld:true,step:0.001,
-			info:"<b>Index of social vulnerability to environmental hazards</b><br> Index characterizing social vulnerability to environmental hazards, drawing on 22 demographic variables. At the national scale, values below -1 are considered low social vulnerability, -1 to +1 are medium, and above +1 are high. Scores are standard deviations from an average vulnerability score of 0. Relative to the continental U.S., scores below -1 may be considered low social vulnerability, -1 to +1 medium, and above +1 high. <a href='https://artsandsciences.sc.edu/geog/hvri/faq' target='_blank'>More Info</a>" 
+			info:"<b>Index of social vulnerability to environmental hazards</b><br> Index characterizing social vulnerability to environmental hazards, drawing on 22 demographic variables. At the national scale, values below -1 are considered low social vulnerability, -1 to +1 are medium, and above +1 are high. Scores are standard deviations from an average vulnerability score of 0. Relative to the continental U.S., scores below -1 may be considered low social vulnerability, -1 to +1 medium, and above +1 high. <a href='https://link.springer.com/article/10.1007/s11069-020-04470-2' target='_blank'>More Info</a>" 
 		}
 	},
 
@@ -577,7 +577,7 @@ app.sliderObj = {
 		},
 		SOVI:{
 			values:[],vis:true,min:-1.776,max:5.362,shfld:true,step:0.001,
-			info:"<b>Index of social vulnerability to environmental hazards</b><br> Index characterizing social vulnerability to environmental hazards, drawing on 22 demographic variables. At the national scale, values below -1 are considered low social vulnerability, -1 to +1 are medium, and above +1 are high. Scores are standard deviations from an average vulnerability score of 0. Relative to the continental U.S., scores below -1 may be considered low social vulnerability, -1 to +1 medium, and above +1 high. <a href='https://artsandsciences.sc.edu/geog/hvri/faq' target='_blank'>More Info</a>" 
+			info:"<b>Index of social vulnerability to environmental hazards</b><br> Index characterizing social vulnerability to environmental hazards, drawing on 22 demographic variables. At the national scale, values below -1 are considered low social vulnerability, -1 to +1 are medium, and above +1 are high. Scores are standard deviations from an average vulnerability score of 0. Relative to the continental U.S., scores below -1 may be considered low social vulnerability, -1 to +1 medium, and above +1 high. <a href='https://link.springer.com/article/10.1007/s11069-020-04470-2' target='_blank'>More Info</a>" 
 		}
 	},
 	// huc 12 + 1 in 100 year flood
@@ -648,7 +648,7 @@ app.sliderObj = {
 		},
 		SOVI:{
 			values:[],vis:true,min:-1.776,max:5.362,shfld:true,step:0.001,
-			info:"<b>Index of social vulnerability to environmental hazards</b><br> Index characterizing social vulnerability to environmental hazards, drawing on 22 demographic variables. At the national scale, values below -1 are considered low social vulnerability, -1 to +1 are medium, and above +1 are high. Scores are standard deviations from an average vulnerability score of 0. Relative to the continental U.S., scores below -1 may be considered low social vulnerability, -1 to +1 medium, and above +1 high. <a href='https://artsandsciences.sc.edu/geog/hvri/faq' target='_blank'>More Info</a>" 
+			info:"<b>Index of social vulnerability to environmental hazards</b><br> Index characterizing social vulnerability to environmental hazards, drawing on 22 demographic variables. At the national scale, values below -1 are considered low social vulnerability, -1 to +1 are medium, and above +1 are high. Scores are standard deviations from an average vulnerability score of 0. Relative to the continental U.S., scores below -1 may be considered low social vulnerability, -1 to +1 medium, and above +1 high. <a href='https://link.springer.com/article/10.1007/s11069-020-04470-2' target='_blank'>More Info</a>" 
 		}
 	},
 	// huc 12 + 1 in 500 year flood
@@ -719,7 +719,7 @@ app.sliderObj = {
 		},
 		SOVI:{
 			values:[],vis:true,min:-1.776,max:5.362,shfld:true,step:0.001,
-			info:"<b>Index of social vulnerability to environmental hazards</b><br> Index characterizing social vulnerability to environmental hazards, drawing on 22 demographic variables. At the national scale, values below -1 are considered low social vulnerability, -1 to +1 are medium, and above +1 are high. Scores are standard deviations from an average vulnerability score of 0. Relative to the continental U.S., scores below -1 may be considered low social vulnerability, -1 to +1 medium, and above +1 high. <a href='https://artsandsciences.sc.edu/geog/hvri/faq' target='_blank'>More Info</a>" 
+			info:"<b>Index of social vulnerability to environmental hazards</b><br> Index characterizing social vulnerability to environmental hazards, drawing on 22 demographic variables. At the national scale, values below -1 are considered low social vulnerability, -1 to +1 are medium, and above +1 are high. Scores are standard deviations from an average vulnerability score of 0. Relative to the continental U.S., scores below -1 may be considered low social vulnerability, -1 to +1 medium, and above +1 high. <a href='https://link.springer.com/article/10.1007/s11069-020-04470-2' target='_blank'>More Info</a>" 
 		}
 	},
 
@@ -791,7 +791,7 @@ app.sliderObj = {
 		},
 		SOVI:{
 			values:[],vis:true,min:-3.827,max:7.075,shfld:true,step:0.001,
-			info:"<b>Index of social vulnerability to environmental hazards</b><br> Index characterizing social vulnerability to environmental hazards, drawing on 22 demographic variables. At the national scale, values below -1 are considered low social vulnerability, -1 to +1 are medium, and above +1 are high. Scores are standard deviations from an average vulnerability score of 0. Relative to the continental U.S., scores below -1 may be considered low social vulnerability, -1 to +1 medium, and above +1 high. <a href='https://artsandsciences.sc.edu/geog/hvri/faq' target='_blank'>More Info</a>" 
+			info:"<b>Index of social vulnerability to environmental hazards</b><br> Index characterizing social vulnerability to environmental hazards, drawing on 22 demographic variables. At the national scale, values below -1 are considered low social vulnerability, -1 to +1 are medium, and above +1 are high. Scores are standard deviations from an average vulnerability score of 0. Relative to the continental U.S., scores below -1 may be considered low social vulnerability, -1 to +1 medium, and above +1 high. <a href='https://link.springer.com/article/10.1007/s11069-020-04470-2' target='_blank'>More Info</a>" 
 		}
 	},
 	// catchment + 1 in 100 year flood
@@ -862,7 +862,7 @@ app.sliderObj = {
 		},
 		SOVI:{
 			values:[],vis:true,min:-3.827,max:7.075,shfld:true,step:0.001,
-			info:"<b>Index of social vulnerability to environmental hazards</b><br> Index characterizing social vulnerability to environmental hazards, drawing on 22 demographic variables. At the national scale, values below -1 are considered low social vulnerability, -1 to +1 are medium, and above +1 are high. Scores are standard deviations from an average vulnerability score of 0. Relative to the continental U.S., scores below -1 may be considered low social vulnerability, -1 to +1 medium, and above +1 high. <a href='https://artsandsciences.sc.edu/geog/hvri/faq' target='_blank'>More Info</a>" 
+			info:"<b>Index of social vulnerability to environmental hazards</b><br> Index characterizing social vulnerability to environmental hazards, drawing on 22 demographic variables. At the national scale, values below -1 are considered low social vulnerability, -1 to +1 are medium, and above +1 are high. Scores are standard deviations from an average vulnerability score of 0. Relative to the continental U.S., scores below -1 may be considered low social vulnerability, -1 to +1 medium, and above +1 high. <a href='https://link.springer.com/article/10.1007/s11069-020-04470-2' target='_blank'>More Info</a>" 
 		}
 	},
 	// catchment + 1 in 500 year flood
@@ -933,7 +933,7 @@ app.sliderObj = {
 		},
 		SOVI:{
 			values:[],vis:true,min:-3.827,max:7.075,shfld:true,step:0.001,
-			info:"<b>Index of social vulnerability to environmental hazards</b><br> Index characterizing social vulnerability to environmental hazards, drawing on 22 demographic variables. At the national scale, values below -1 are considered low social vulnerability, -1 to +1 are medium, and above +1 are high. Scores are standard deviations from an average vulnerability score of 0. Relative to the continental U.S., scores below -1 may be considered low social vulnerability, -1 to +1 medium, and above +1 high. <a href='https://artsandsciences.sc.edu/geog/hvri/faq' target='_blank'>More Info</a>" 
+			info:"<b>Index of social vulnerability to environmental hazards</b><br> Index characterizing social vulnerability to environmental hazards, drawing on 22 demographic variables. At the national scale, values below -1 are considered low social vulnerability, -1 to +1 are medium, and above +1 are high. Scores are standard deviations from an average vulnerability score of 0. Relative to the continental U.S., scores below -1 may be considered low social vulnerability, -1 to +1 medium, and above +1 high. <a href='https://link.springer.com/article/10.1007/s11069-020-04470-2' target='_blank'>More Info</a>" 
 		}
 	}
 }

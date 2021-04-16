@@ -283,7 +283,7 @@ function eventListeners(){
 						link.click();
 						link.remove();
 						$(document.body).css({ 'cursor': 'default' })
-						$(`#downloadData`).prop("disabled",false)
+						$(`.dlssre`).prop("disabled",false)
 					});
 				})
 			})
