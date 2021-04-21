@@ -103,12 +103,8 @@ function(
    app.map.add(app.layers)
    app.map.add(app.resultsLayer)
 
-   // set layer visibility
-   // var layer = app.layers.findSublayerById(parseInt(app.obj.hucLayer));
-   // layer.visible = true;
-
    // create legend
-   var legend = new Legend({
+   app.legend = new Legend({
       view: app.view,
       layerInfos:[{
          layer: app.layers,
@@ -116,14 +112,23 @@ function(
       }],
       container: document.createElement("div")
    })
-   var lgExpand = new Expand({
+   app.lgExpand = new Expand({
       view: app.view,
-      content: legend
+      content: app.legend
    })
-   app.view.ui.add(lgExpand,{
+   app.view.ui.add(app.lgExpand,{
       position: "bottom-left"
    })
-   lgExpand.expand();
+
+   // change legend based on window size
+   var x = window.matchMedia("(max-width: 700px)")
+   mobilePortrait(x) // Call listener function at run time
+   x.addListener(mobilePortrait) // Attach listener function on state changes
+
+   // change legend based on window size
+   var y = window.matchMedia("(orientation:landscape)")
+   mobileLandscape(y) // Call listener function at run time
+   y.addListener(mobileLandscape) // Attach listener function on state changes
 
    // listen for poup close button
    watchUtils.whenTrue(app.view.popup,'visible', function(){
@@ -153,5 +158,20 @@ function(
 
 function clearGraphics(){
    app.map.layers.removeAll();
+}
+
+function mobilePortrait(x){
+   if (x.matches) { 
+      app.lgExpand.collapse();
+      app.mobile = true;
+   } else {
+      app.lgExpand.expand();
+      app.mobile = false;
+   }
+}
+function mobileLandscape(y){
+   if (y.matches) { 
+      app.lgExpand.collapse();
+   } 
 }
 

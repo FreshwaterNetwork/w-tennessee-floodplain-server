@@ -247,7 +247,7 @@ function eventListeners(){
 		})
 	})
 	//download data button
-	$(`#downloadData`).click(function(c){
+	document.querySelector("#downloadData").addEventListener('click', (() => {
 		require(["esri/tasks/Geoprocessor"], function(Geoprocessor) {
 			$(`.dlssre`).prop("disabled",true)
 			$(document.body).css({ 'cursor': 'wait' })
@@ -288,7 +288,8 @@ function eventListeners(){
 				})
 			})
 		})
-	})
+	}))
+	// save and share click
 	document.querySelector(`#saveAndShare`).addEventListener('click', (() => {
 		createURL();
 	}))
