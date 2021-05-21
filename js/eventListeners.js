@@ -392,7 +392,7 @@ function cbChecker(t){
 }
 function layerDefs(){
 	app.obj.exp = [app.Acres, app.IL_TNp, app.IL_TPp, app.IL_TN_DELp, app.IL_TP_DELp, app.nccpi, app.drain,	app.NRCS, app.nearProt,	app.nearIBA, app.inTNC,	app.cumu_hci, app.resil, app.swap1, app.swap2, app.swap3, app.pop, app.damages, app.SOVI]
-	var exp = "OBJECTID > 0";
+	var exp = "";
 	var cnt = 0;
 	$.each(app.obj.exp, function(i, v){
 		if (v.length > 0){

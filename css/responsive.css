@@ -37,23 +37,10 @@
       padding-top: 4px;
       font-size: 14px;
    }
-}
-@media screen and (orientation:landscape) {
-   body{
-      height:100vh;
+   .portrait-toggle{
+      display: block;
    }
-   .esri-view-width-xsmall .esri-expand--auto .esri-expand__mask--expanded {
+   .landscape-toggle{
       display: none;
-   }
-   #flex-container {
-      height: calc(90%);
-      width: calc(100%);
-   }
-   #header{
-      height: 40px;
-   }
-   #map-toggle{
-      width: 20px;
-      font-size: 14px;
    }
 }

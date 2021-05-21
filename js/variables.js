@@ -243,31 +243,46 @@ app.mapImageLayers = [
 	{
 		id: 3,
 		visible: false,
-		title: "Relative inundation frequency (from satellite imagery)",
-		opacity: 0.8,
-		supporting: true,
-		info: "<b>Relative inundation frequency (from satellite imagery)</b><br>This data layer was developed by the Gulf Coastal Plains & Ozarks Landscape Conservation Cooperative. It is a mosaic of multiple satellite images over time to show relative inundation across the landscape. <a href='https://www.sciencebase.gov/catalog/item/5617e3c3e4b0cdb063e3fc35' target='_blank'>More Info</a>"
-	},
-	{
-		id: 4,
-		visible: false,
 		title: "5-Year Floodplain",
 		opacity: 0.8,
 		supporting: true
 	},
 	{
-		id: 5,
+		id: 4,
 		visible: false,
 		title: "100-Year Floodplain",
 		opacity: 0.8,
 		supporting: true
 	},
 	{
-		id: 6,
+		id: 5,
 		visible: false,
 		title: "500-Year Floodplain",
 		opacity: 0.8,
 		supporting: true
+	},
+	{
+		id: 6,
+		visible: false,
+		title: "Relative inundation frequency (from satellite imagery)",
+		opacity: 0.8,
+		supporting: true,
+		info: "<b>Relative inundation frequency (from satellite imagery)</b><br>This data layer was developed by the Gulf Coastal Plains & Ozarks Landscape Conservation Cooperative. It is a mosaic of multiple satellite images over time to show relative inundation across the landscape. <a href='https://www.sciencebase.gov/catalog/item/5617e3c3e4b0cdb063e3fc35' target='_blank'>More Info</a>"
+	},
+	{
+		id: 7,
+		visible: false,
+		title: "FEMA flood hazard zones",
+		opacity: 0.8,
+		supporting: true,
+		info: "<b>FEMA flood hazard zones</b><br><a href='https://snmapmod.snco.us/fmm/document/fema-flood-zone-definitions.pdf' target='_blank'>More Info</a>"
+	},
+	{
+		id: 8,
+		visible: false,
+		title: "Protected Areas Database of the U.S.",
+		opacity: 0.8,
+		supporting: true,
 	}
 ]
 

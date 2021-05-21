@@ -2,11 +2,11 @@
 <html>
    <head>
       <meta charset="utf-8" />
-      <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
+      <meta name="viewport" content="initial-scale=1,width=device-width,maximum-scale=1,user-scalable=no"/>
       <title>Floodplain Explorer</title>
 
       <link rel="stylesheet" href="https://js.arcgis.com/4.16/esri/themes/light/main.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
       <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
       <link rel="stylesheet" href="css/styleguide.css">
       <link rel="stylesheet" href="css/style.css">
@@ -58,7 +58,20 @@
                </div>
             </div>
          </div>
-         <div id="map-toggle"><span>HIDE</span><span class="hide">SHOW</span> MAP</div>
+         <div id="map-toggle">
+            <div class="landscape-toggle"> 
+               <span><i style="margin-bottom: 10px;" class="fas fa-chevron-left"></i>HIDE</span>
+               <span class="hide"><i style="margin-bottom: 10px;" class="fas fa-chevron-right"></i>SHOW</span>
+               <span>CONTROLS<i style="margin-top: 10px;" class="fas fa-chevron-left"></i></span>
+               <span class="hide">CONTROLS<i style="margin-top: 10px;" class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="portrait-toggle">
+               <span><i style="margin-right: 10px;" class="fas fa-chevron-down"></i>HIDE</span>
+               <span class="hide"><i style="margin-right: 10px;" class="fas fa-chevron-up"></i>SHOW</span>
+               <span>CONTROLS<i style="margin-left: 10px;" class="fas fa-chevron-down"></i></span>
+               <span class="hide">CONTROLS<i style="margin-left: 10px;" class="fas fa-chevron-up"></i></span>
+            </div>
+         </div>
          <div id="map-div">
             <div id="viewDiv"></div>
          </div>

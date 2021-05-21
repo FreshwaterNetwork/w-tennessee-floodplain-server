@@ -44,7 +44,7 @@ function buildElements(){
 								</div>
 							</div>
 							<div class="feInfoWrap"><i class="fa fa-info-circle feInfo feInfoOpen"></i></div>
-							<div class="feInfoTextWrap"><span class="feInfoText"></span><i class="fa fa-close feInfo feInfoClose"></i></div>						
+							<div class="feInfoTextWrap"><span class="feInfoText"></span><i class="fas fa-times feInfo feInfoClose"></i></div>						
 						</div>	
 					</div>
 				`);
@@ -70,7 +70,7 @@ function buildElements(){
 								</label>
 							</div>	
 							<div class="feInfoWrap"><i class="fa fa-info-circle feInfo feInfoOpen"></i></div>
-							<div class="feInfoTextWrap"><span class="feInfoText"></span><i class="fa fa-close feInfo feInfoClose"></i></div>
+							<div class="feInfoTextWrap"><span class="feInfoText"></span><i class="fas fa-times feInfo feInfoClose"></i></div>
 						</div>
 					</div>
 				`);	
@@ -85,7 +85,7 @@ function buildElements(){
 				let info = "";
 				if (v.info){
 					info = `<div class="feInfoWrapSub"><i class="fa fa-info-circle feInfo feInfoOpen"></i></div>
-							<div class="feInfoTextWrap"><span class="feInfoText">${v.info}</span><i class="fa fa-close feInfo feInfoClose"></i></div>`
+							<div class="feInfoTextWrap"><span class="feInfoText">${v.info}</span><i class="fas fa-times feInfo feInfoClose"></i></div>`
 				}		
 	    		document.querySelector("#sup-layers-wrap").insertAdjacentHTML("beforeend",`
 	    			<div class="flex1" style="position:relative;">

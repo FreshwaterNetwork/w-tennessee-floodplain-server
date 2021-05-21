@@ -106,10 +106,10 @@ function(
    // create legend
    app.legend = new Legend({
       view: app.view,
-      layerInfos:[{
-         layer: app.layers,
-         title: "Legend"
-      }],
+      // layerInfos:[{
+      //    layer: app.layers,
+      //    title: "Legend"
+      // }],
       container: document.createElement("div")
    })
    app.lgExpand = new Expand({
@@ -164,6 +164,12 @@ function mobilePortrait(x){
    if (x.matches) { 
       app.lgExpand.collapse();
       app.mobile = true;
+      if (document.querySelector(`#side-nav`).clientWidth == 0){
+         document.querySelector(`#side-nav`).classList.toggle("hide-side-nav-width");
+         document.querySelectorAll(`#map-toggle span`).forEach(span => {
+            span.classList.toggle("hide")
+         })
+      }
    } else {
       app.lgExpand.expand();
       app.mobile = false;
@@ -172,6 +178,12 @@ function mobilePortrait(x){
 function mobileLandscape(y){
    if (y.matches) { 
       app.lgExpand.collapse();
+      if (document.querySelector(`#side-nav`).clientHeight == 0){
+         document.querySelector(`#side-nav`).classList.toggle("hide-side-nav-height");
+         document.querySelectorAll(`#map-toggle span`).forEach(span => {
+            span.classList.toggle("hide")
+         })
+      }
    } 
 }
 
