@@ -241,6 +241,14 @@ app.mapImageLayers = [
 		opacity: 0.5
 	},
 	{
+		id: 9,
+		visible: false,
+		title: "Soil drainage classes",
+		opacity: 0.8,
+		supporting: true,
+		info: "<a href='https://www.nrcs.usda.gov/wps/PA_NRCSConsumption/download?cid=nrcseprd1296622&ext=pdf' target='_blank'>More Info</a>"
+	},
+	{
 		id: 3,
 		visible: false,
 		title: "5-Year Floodplain",
