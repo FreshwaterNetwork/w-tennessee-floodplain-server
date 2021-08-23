@@ -17,7 +17,7 @@ if (search){
 }
 // build top level controls
 app.topObj = {
-	introP: "This floodplain prioritization tool is designed to identify critical opportunities for floodplain protection in Western Tennessee. Use the selector widgets below to specify criteria related to water quality, wildlife habitat, and human exposure to flood risk. The map on the right will change in response to your selections to identify sites meeting these criteria, identifying those geographies where floodplain conservation is likely to have the greatest positive impact on the health of this river system.",
+	introP: 'This floodplain prioritization tool is designed to identify critical opportunities for floodplain protection in Western Tennessee. Use the selector widgets below to specify criteria related to water quality, wildlife habitat, and human exposure to flood risk. The map on the right will change in response to your selections to identify sites meeting these criteria, identifying those geographies where floodplain conservation is likely to have the greatest positive impact on the health of this river system.<br><br>This tool uses the Fathom-US 2.0 floodplain data, the most comprehensive view of flood hazard across the United States. To learn more about this dataset, visit <a href="https://www.fathom.global/fathom-us" target="_blank">here</a> and <a href="https://firststreet.org/research-lab/published-research/flood-model-methodology_overview/" target="_blank">here</a>.',
 	toggleBtns:{
 		tb1:{
 			header:"Select Flood Frequency",

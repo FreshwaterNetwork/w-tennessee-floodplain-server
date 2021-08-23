@@ -15,6 +15,13 @@ function buildElements(){
 			`);
 		})
 	})
+	// add slider for opacity
+	document.querySelector("#opacity-wrap").insertAdjacentHTML("beforeend", `
+		<div class="opacity-slidecontainer">
+			<label for="sl-opacity">Watershed Opacity</label>
+			<input type="range" min="0" max="1" step=".1" value=".7" class="opacity-slider" id="sl-opacity" name="sl-opacity">
+		</div>
+	`);
 
 	// create filter controls from object
 	let num = 0;

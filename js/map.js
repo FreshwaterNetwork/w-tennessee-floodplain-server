@@ -119,7 +119,7 @@ function(
    app.view.ui.add(app.lgExpand,{
       position: "bottom-left"
    })
-
+   app.lgExpand.expand()
    // change legend based on window size
    var x = window.matchMedia("(max-width: 700px)")
    mobilePortrait(x) // Call listener function at run time
@@ -177,13 +177,16 @@ function mobilePortrait(x){
 }
 function mobileLandscape(y){
    if (y.matches) { 
-      app.lgExpand.collapse();
+      app.lgExpand.expand();
       if (document.querySelector(`#side-nav`).clientHeight == 0){
          document.querySelector(`#side-nav`).classList.toggle("hide-side-nav-height");
          document.querySelectorAll(`#map-toggle span`).forEach(span => {
             span.classList.toggle("hide")
          })
       }
+   }
+   else{
+     
    } 
 }
 

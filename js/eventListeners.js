@@ -109,9 +109,18 @@ function eventListeners(){
 			sl.visible = false;
 		})
 		var layer = app.layers.findSublayerById(parseInt(app.obj.hucLayer));
-   		layer.visible = true;
+   	layer.visible = true;
+   	layer.opacity = app.obj.op;
 
 	})));
+	// opacity slider for watershed layers
+	document.querySelectorAll(".opacity-slider").forEach(slider => slider.addEventListener('mouseup', (() => {
+		app.obj.op = slider.value
+
+		let sublayer = app.layers.findSublayerById(parseInt(app.obj.hucLayer));
+		sublayer.opacity = app.obj.op;
+	})));
+
 	// Checkboxes for sliders
 	$('#umr-wrap .-slCb').on('click',function(c){
 		if (c.target.checked == true){

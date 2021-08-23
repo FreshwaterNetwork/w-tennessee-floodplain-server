@@ -160,5 +160,28 @@
 	color: red;
 	display: none;
 }
+.opacity-slidecontainer{
+	text-align: center;
+}
+.opacity-slidecontainer input[type=range] {
+    -webkit-appearance: none;
+    background-image: linear-gradient(to right, #fff, #6b6b6b);
+    width: 80px;
+    height: 10px;
+    /*border: 1px solid rgb(16,22,26);*/
+    border: 1px solid rgb(16,22,26);
+    margin-left: 4px;
+    border-radius: 5px;
+}
+.opacity-slidecontainer input[type="range"]::-webkit-slider-thumb {
+     -webkit-appearance: none;
+    background-color: #457545;
+    opacity: 1;
+    width: 16px;
+    height: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid rgb(16,22,26); 
 
+}
 
